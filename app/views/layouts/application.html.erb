@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Do You Read Me?</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+<ul>
+<li><%= link_to 'Add User', new_user_path %></li>
+<li><%= link_to 'Add Book', new_book_path %></li>
+<li><%= link_to 'Add Review', new_review_path %></li>
+</ul>
+</nav>
+<%= yield %>
+
+</body>
+</html>
