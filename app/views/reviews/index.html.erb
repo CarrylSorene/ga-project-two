@@ -1,0 +1,11 @@
+<!-- Book title, author and username for each - syntax how to iterate and bring in? -->
+
+<h2>Reviews</h2>
+
+<% @reviews.each do |review| %>
+
+
+  <p>Rating: <%= review.rating %></p>
+  <p>Review: <%= review.content %></p>
+
+<% end %>
