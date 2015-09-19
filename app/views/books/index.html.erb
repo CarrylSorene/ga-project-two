@@ -1,15 +1,18 @@
-<h1>Do You Read Me?</h1>
+
 <h2>Books</h2>
 
 <% @books.each do |book| %>
   
-  <h3 class='title'>Title: <%= book.title %></h3>
-  <h3 class='author'>Author: <%= book.author %></h3>
+  <h3><%= book.title %>, <%= book.author %></h3>
   <p class='cover-image'><%= book.cover_image %></p>
-  <p>Summary: <%= truncate(book.summary, length: 10) { link_to 'Read more', book } %></p>
+  <h4>Summary: </h4>
+  <p><%= truncate(book.summary, length: 10) { link_to 'Read more', book } %></p>
 
   <% book.reviews.each do |review| %>
-    <p>Random Review: <%= truncate(review.content, length: 5) %></p>
-  <% end %>
+    
+    <h4>Random Review: </h4>
+    <p><%= truncate(review.content, length: 5) %></p>
 
   <% end %>
+
+<% end %>

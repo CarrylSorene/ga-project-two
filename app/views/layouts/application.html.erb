@@ -8,13 +8,17 @@
 </head>
 <body>
 
+<h1>Do You Read Me?</h1>
+
 <nav>
-<ul>
-<li><%= link_to 'Add User', new_user_path %></li>
-<li><%= link_to 'Add Book', new_book_path %></li>
-<li><%= link_to 'Add Review', new_review_path %></li>
-</ul>
+  <ul>
+    <li><%= link_to 'Home', books_path %></li>
+    <li><%= link_to 'Add User', new_user_path %></li>
+    <li><%= link_to 'Add Book', new_book_path %></li>
+    <li><%= link_to 'Add Review', new_review_path %></li>
+  </ul>
 </nav>
+
 <%= yield %>
 
 </body>
