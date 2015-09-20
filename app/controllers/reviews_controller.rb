@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_params)
+    @book = Book.new(book_params)
     if review.save
       flash[:notice] = 'Review added successfully!'
       redirect_to review
