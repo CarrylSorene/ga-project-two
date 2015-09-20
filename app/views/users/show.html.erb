@@ -1,6 +1,10 @@
 <h2><%= @user.name %></h2>
-<p>Avatar Image</p>
 
 <h3><%= @user.age %>, <%= @user.location %></h3>
+
+<p class="avatar"><%= image_tag(@user.avatar.url) %><p>
+
 <h4>Bio:</h4>
 <p></p>
+
+  

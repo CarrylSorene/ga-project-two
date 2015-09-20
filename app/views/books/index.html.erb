@@ -4,7 +4,7 @@
 <% @books.each do |book| %>
   
   <h3><%= book.title %>, <%= book.author %></h3>
-  <p class='cover-image'><%= book.cover_image %></p>
+  <p class='cover'><%=  %></p>
   <h4>Summary: </h4>
   <p><%= truncate(book.summary, length: 10) { link_to 'Read more', book } %></p>
 

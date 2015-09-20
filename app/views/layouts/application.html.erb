@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Do You Read Me?</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<h1>Do You Read Me?</h1>
+    <title>Do You Read Me?</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <h1>Do You Read Me?</h1>
 
 <nav>
   <ul>
@@ -19,7 +25,7 @@
   </ul>
 </nav>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>
