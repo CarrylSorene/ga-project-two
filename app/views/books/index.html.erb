@@ -1,7 +1,9 @@
-
 <h2>Books</h2>
 
+
 <% @books.each do |book| %>
+  
+  <div class="main"> 
   
   <h3><%= book.title %>, <%= book.author %></h3>
   <p class='cover'><%=  %></p>
@@ -16,3 +18,4 @@
   <% end %>
 
 <% end %>
+</div>

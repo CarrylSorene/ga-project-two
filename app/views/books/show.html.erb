@@ -8,3 +8,8 @@
 
 <h4>Summary:</h4>
 <p><%= @book.summary %></p>
+
+<%= form_for @book do |f| %>
+<p><%= f.submit 'Edit' %><%= f.submit 'Delete' %></p>
+
+<% end %>

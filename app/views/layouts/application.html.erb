@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html>
+<head>
+  <title>Do You Read Me?</title>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
-    <title>Do You Read Me?</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body>
-
-  <h1>Do You Read Me?</h1>
+<h1>Do You Read Me?</h1>
 
 <nav>
   <ul>
     <li><%= link_to 'Home', books_path %></li>
-    <li><%= link_to 'Add User', new_user_path %></li>
-    <li><%= link_to 'Add Book', new_book_path %></li>
-    <li><%= link_to 'Add Review', new_review_path %></li>
+    <li><%= link_to 'Add A Book', new_book_path %></li>
+    <li><%= link_to 'Read Reviews', reviews_path %></li>
+    <li><%= link_to 'Write A Review', new_review_path %></li>
+    <li><%= link_to 'Create User Profile', new_user_path %></li>
   </ul>
+  <p id="recommend">Recommended Books</p>
 </nav>
 
-    <%= yield %>
+<%= yield %>
 
-  </body>
+</body>
 </html>

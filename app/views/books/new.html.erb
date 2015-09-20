@@ -1,3 +1,4 @@
+<div class="form">
 <%= form_for @book do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
@@ -8,9 +9,13 @@
 <%= f.label :genre %>
 <%= f.text_field :genre %>
 
+<%= f.label :summary %>
+<%= f.text_field :summary %>
+
 <%= f.label :cover %>
 <%= f.file_field :cover %>
 
 <%= f.submit 'Add Book' %>
 
 <% end %>
+</div>
