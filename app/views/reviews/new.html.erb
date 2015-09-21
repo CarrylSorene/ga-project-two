@@ -1,7 +1,11 @@
 <div class="pure-form pure-form-stacked">
+
+
+
 <%= form_for @review do |f| %>
 
 
+<%= f.select :book, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
 
 <%= f.label :rating %>
 <%= f.text_field :rating %>

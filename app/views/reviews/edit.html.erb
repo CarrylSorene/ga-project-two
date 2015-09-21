@@ -1,13 +1,17 @@
 <div class="pure-form pure-form-stacked">
-<%= form_for @review do |f| %>
+<%= form_for([@book, @book.reviews.build]) do |r| %>
+<%= form_for @review do |r| %>
 
-<%= f.label :rating %>
-<%= f.text_field :rating %>
+<%= r.label 'Your Name' %>
+<%= r.text_field :reviewer %>
 
-<%= f.label :content %>
-<%= f.text_field :content %>
+<%= r.label :rating %>
+<%= r.text_field :rating %>
 
-<%= f.submit 'Update Review' %>
+<%= r.label :content %>
+<%= r.text_field :content %>
+
+<%= r.submit 'Update Review' %>
 
 <% end %>
 </div>

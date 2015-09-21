@@ -1,5 +1,30 @@
-<!-- Book title, author and username-->
+<h2>Review: </h2>
+
+<!-- Book title, author -->
+
+<% @books.reviews.each do |book| %>
+
+<h3><%= book.title %>, <%= book.author %></h3>
+
+<% end %>
+
+<!-- User name -->
+
+<% @reviews.user.each do |user| %>
+  
+<h4><%= user.name %></h4>
+
+<% end %>
+
+<% @reviews.each do |review| %>
 
 <p><%= @review.rating %>
-<h4>Review: </h4>
+
 <p><%= @review.content %>
+
+<% book.reviews.each do |review| %>
+    
+    <h4>Random Review: </h4>
+    <p><%= truncate(review.content, length: 5) %></p>
+
+  <% end %>

@@ -1,21 +1,25 @@
-<h2 .pure-u-*>Books</h2>
-
+<h2>Books</h2>
 
 <% @books.each do |book| %>
-  
-  <div class="main"> 
-  
-  <h3><%= book.title %>, <%= book.author %></h3>
-  <p class='cover'><%=  %></p>
-  <h4>Summary: </h4>
-  <p><%= truncate(book.summary, length: 10) { link_to 'Read more', book } %></p>
 
-  <% book.reviews.each do |review| %>
-    
-    <h4>Random Review: </h4>
-    <p><%= truncate(review.content, length: 5) %></p>
+    <section>
 
+      <h3><%= link_to book.title, book %>, <%= book.author %></h3>
+      
+      <p class='cover'><%=  %></p>
+      
+      <h4>Summary: </h4>
+      
+      <p><%= truncate(book.summary, length: 10) { link_to 'Read more', book } %></p>
+
+      <% book.reviews.each do |review| %>
+        
+      <h4>Random Review: </h4>
+      
+      <p><%= truncate(review.content, length: 5) %></p>
+      
+    </section>
+  
   <% end %>
 
 <% end %>
-</div>

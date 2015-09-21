@@ -6,14 +6,16 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @books = Book.all
   end
 
   def create
-    review = Review.new(review_params)
-    @book = Book.new(book_params)
-    if review.save
+    @book = Book.find(params[:book_id])
+    @review = @book.reviews.create(review_params)
+    
+    if @review.save
       flash[:notice] = 'Review added successfully!'
-      redirect_to review
+      redirect_to book_path(@book)
     else
       flash.now[:notice] = 'Failed to create review. Please try again.'
       render :new
@@ -44,7 +46,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :reviewer)
   end
 
 end

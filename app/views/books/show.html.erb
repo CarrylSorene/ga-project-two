@@ -1,15 +1,44 @@
+<div class="pure-g">
 <h2><%= @book.title %></h2>
 
 <h3><%= @book.author %></h3>
 
-<p>Genre: <%= @book.genre %></p>
+<h4>Genre: <%= @book.genre %></h4>
 
 <p class='cover'><%= %></p>
 
 <h4>Summary:</h4>
 <p><%= @book.summary %></p>
 
-<%= form_for @book do |f| %>
-<p><%= f.submit 'Edit' %><%= f.submit 'Delete' %></p>
-
+<h4>Reviews: </h4>
+  <% @book.reviews.each do |review| %>
+    <p>Reviewer: <%= review.reviewer %><p>
+    <p>Rating: <%= review.rating %></p>
+    <p><%= review.content %></p>
 <% end %>
+
+<div class="pure-form pure-form-stacked">
+<h4>Rate and Review</h4>
+  <%= form_for([@book, @book.reviews.build]) do |r| %>
+  <p>
+  <%= r.label 'Your Name' %>
+  <%= r.text_field :reviewer %>
+  </p>
+  <p>
+  <%= r.label :rating %>
+  <%= r.text_field :rating %>
+  </p>
+  <p>
+  <%= r.label :content %>
+  <%= r.text_field :content %>
+  </p>
+  <p>
+  <%= r.submit 'Submit' %>
+  </p>
+<% end %>
+
+<p><%= button_to 'Edit Book', edit_book_path(@book), method: :get %></p>
+<p><%= button_to 'Delete Book', book_path, method: :delete, data: {confirm: "Are you sure?"} %></p>
+
+</div>
+</div

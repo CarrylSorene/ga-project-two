@@ -4,15 +4,7 @@
   <title>Do You Read Me?</title>
   
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-<!--<![endif]-->
-  
+ 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -20,15 +12,12 @@
 </head>
 <body>
 
-<h1 .pure-u-*>Do You Read Me?</h1>
+<h1>Do You Read Me?</h1>
 
-<nav .pure-u-*>
+<nav>
   <ul>
     <li><%= link_to 'Home', books_path %></li>
     <li><%= link_to 'Add A Book', new_book_path %></li>
-    <li><%= link_to 'Read Reviews', reviews_path %></li>
-    <li><%= link_to 'Write A Review', new_review_path %></li>
-    <li><%= link_to 'Create User Profile', new_user_path %></li>
   </ul>
   <p id="recommend">Recommended Books</p>
 </nav>

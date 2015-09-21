@@ -10,6 +10,8 @@ class BooksController < ApplicationController
 
   def create
     book = Book.new(book_params)
+    @review = Review.create(params[:review])
+
     if book.save
       flash[:notice] = 'Book added successfully!'
       redirect_to book
@@ -21,6 +23,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @review = Review.new
   end
 
   def edit
@@ -38,12 +41,15 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id]).destroy
-    redirect_to_root_path
+    redirect_to books_path
   end
 
   private
   def book_params
     params.require(:book).permit(:title, :author, :genre, :summary, :cover)
+  end
+  def review_params
+    params.require(:review).permit(:content, :rating)
   end
 
 end
