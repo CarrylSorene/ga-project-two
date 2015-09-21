@@ -4,7 +4,14 @@
   <title>Do You Read Me?</title>
   
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
- 
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,14 +19,14 @@
 </head>
 <body>
 
-<h1>Do You Read Me?</h1>
+<h1 class="main-heading"><%= link_to 'Do You Read Me?', books_path %></h1>
 
 <nav>
   <ul>
-    <li><%= link_to 'Home', books_path %></li>
     <li><%= link_to 'Add A Book', new_book_path %></li>
+    <li><%= link_to 'Books by Author', books_path(@book_author) %></li>
+    <li><%= link_to 'Books by Genre', books_path(@book_genre) %></li>
   </ul>
-  <p id="recommend">Recommended Books</p>
 </nav>
 
 <%= yield %>

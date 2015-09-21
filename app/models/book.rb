@@ -4,7 +4,7 @@ class Book < ActiveRecord::Base
 
   validates :title, presence: true
 
-  # mount_uploader :cover, CoverUploader
+  mount_uploader :cover, CoverUploader
 
 end
 
