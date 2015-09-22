@@ -20,13 +20,13 @@
 <body>
 <header>
 <h1 class="main-heading"><%= link_to 'Do You Read Me?', books_path %></h1>
+
 <nav>
   <ul>
     <li><%= link_to 'Add A Book', new_book_path %></li>
-    <li><%= link_to 'Books by Author', books_path(@book_author) %></li>
-    <li><%= link_to 'Books by Genre', books_path(@book_genre) %></li>
   </ul>
 </nav>
+
 </header>
 
 <%= yield %>

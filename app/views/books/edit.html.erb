@@ -1,23 +1,32 @@
-<div class="main">
-  <div class="pure-form pure-form-stacked">
-    <%= form_for @book do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<div class="form-wrap">
 
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+    <h2 class="book-edit-h2">Edit "<%= @book.title %>"</h2>
+      
+      <div class="pure-form pure-form-stacked">
+        <%= form_for @book do |f| %>
+        <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        </p>
+        <p>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+        </p>
+        <p>
+        <%= f.label :genre %>
+        <%= f.text_field :genre %>
+        </p>
+        <p>
+        <%= f.label :summary %>
+        <%= f.text_field :summary %>
+        </p>
+        <p>
+        <%= f.label :cover %>
+        <%= f.file_field :cover %>
+        </p>
+        <%= f.submit 'Update Book' %>
 
-    <%= f.label :genre %>
-    <%= f.text_field :genre %>
+        <% end %>
+    </div>
 
-    <%= f.label :summary %>
-    <%= f.text_field :summary %>
-
-    <%= f.label :cover %>
-    <%= f.file_field :cover %>
-
-    <%= f.submit 'Update Book' %>
-
-    <% end %>
-  </div>
 </div>

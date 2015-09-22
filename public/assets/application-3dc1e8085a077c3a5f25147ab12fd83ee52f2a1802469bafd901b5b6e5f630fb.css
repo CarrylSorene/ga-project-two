@@ -10,17 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
+
  */
 
+
 body {
+ /* width: 99%;
+  margin: 0 auto;
+*/ 
   padding: 0px 30px;
   font-family: 'Poiret One', cursive;
   color: #523942;
 }
 
-h1, nav, footer {
+h1, h2, nav, footer {
   text-align: center;
 }
 
@@ -33,21 +38,21 @@ h1 {
   font-size: 4.4em;
 }
 
-.book-index-h2 {
-  font-size: 2em;
-  max-width: 360px;
-}
-
-.book-h2 {
-  font-size: 1.8em;
+h2 {
+  font-size: 2.2em;
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 1.8em;
+  text-align: center;
 }
 
 h4 {
   font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.1em;
 }
 
 p {
@@ -60,7 +65,8 @@ ul {
 
 li {
   display: inline-block;
-  font-size: 2.4em;
+  padding: 0 10px;
+  font-size: 1.4em;
 }
 
 a {
@@ -77,53 +83,4 @@ section {
   width: 400px;
   vertical-align: top;
   padding-top: 20px;
-}
-
-.index-summary {
-  max-width: 360px;
-}
-
-.book-top {
-  margin-top: 40px;
-}
-
-.book-main {
-  display: inline-block;
-}
-
-.book-info {
-  vertical-align: top;
-  width: 30%;
-  max-width: 300px;
-  display: inline-block;
-}
-
-.book-summary {
-  vertical-align: top;
-  width: 60%;
-  margin-left: 1%;
-  display: inline-block;
-}
-
-.edit-delete {
-  display: inline-block;
-}
-
-.form-wrap {
-  /*display: block;*/
-  width: 20%;
-  margin: 0 auto;
-}
-
-.summary-paragraph {
-  line-height: 30px;
-}
-
-.reviews {
-  border-bottom: 1px #000 dotted;
-}
-
-.add-review {
-  width: 20%;
-  margin: 0 auto;
 }

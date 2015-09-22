@@ -1,46 +1,60 @@
-<div class="main">
-  <h2><%= @book.title %></h2>
-  <h3><%= @book.author %></h3>
+<div class="book-top">
+  <h2 class="book-h2"><%= @book.title %></h2>
+  <h3 class="book-h3"><%= @book.author %></h3>
+</div>
 
-  <p class="cover"><%= image_tag(@book.cover.url) %></p>
+<div class="book-main">
+  <div class="book-info">
+    <p><%= image_tag(@book.cover.url, width: '230', height: '340', alt: 'Book Cover Image') %></p>
+  </div>
+
+  <div class="book-summary">
+    <h4>Summary:</h4>
+    <p class="summary-paragraph"><%= @book.summary %></p>
+  </div>
 
   <h4>Genre: <%= @book.genre %></h4>
-
-  <h4>Summary:</h4>
-  <p><%= @book.summary %></p>
-
-  <h4>Reviews: </h4>
-    <% @book.reviews.each do |review| %>
-      <p>Reviewer: <%= review.reviewer %><p>
-      <p>Rating: <%= render_stars(review.rating) %> <%= review.rating %></p>
-      
-      <p><%= review.content %></p>
-  <% end %>
-
-    <div class="pure-form pure-form-stacked">
-     
-      <h4>Rate and Review</h4>
-       
-        <%= form_for([@book, @book.reviews.build]) do |r| %>
-        <p>
-        <%= r.label 'Name' %>
-        <%= r.text_field :reviewer %>
-        </p>
-        <p>
-        <%= r.label :rating %>
-        <%= r.text_field :rating %>
-        </p>
-        <p>
-        <%= r.label 'Review' %>
-        <%= r.text_field :content %>
-        </p>
-        <p>
-        <%= r.submit 'Submit' %>
-        </p>
-      <% end %>
-
-      <p><%= button_to 'Edit Book', edit_book_path(@book), method: :get %></p>
-      <p><%= button_to 'Delete Book', book_path, method: :delete, data: {confirm: "Are you sure?"} %></p>
-
-    </div>
+    <div class="edit-delete">
+    <p><%= button_to 'Edit Book', edit_book_path(@book), method: :get %></p>
+    <p><%= button_to 'Delete Book', book_path, method: :delete, data: {confirm: "Are you sure?"} %></p>
   </div>
+</div>
+
+<div class="reviews">
+  <h4>Reviews</h4>
+    <% @book.reviews.each do |review| %>
+      <p>Name: <%= review.reviewer %>
+      <p>Rating: <% review.rating.times do %>
+         <span class="star"><%= image_tag asset_path('ystar-1a015bdb43831189bf6fe8c5c4dedd473286bc8fe2425ece567e4ca60f58f989.png') %></span>
+         <% end %>
+  
+      <p>Review: <%= review.content %></p>
+
+    <% end %>
+</div>
+
+<div class="add-review pure-form pure-form-stacked">
+   
+  <h4>Add A Review</h4>
+    <%= form_for([@book, @book.reviews.build]) do |r| %>
+    <p>
+    <%= r.label 'Name' %>
+    <%= r.text_field :reviewer %>
+    </p>
+    <p>
+    <%= r.label :rating %>
+    <%= r.text_field :rating %>
+    </p>
+    <p>
+    <%= r.label 'Review' %>
+    <%= r.text_field :content %>
+    </p>
+    <p>
+    <%= r.submit 'Submit' %>
+    </p>
+  <% end %>
+</div>
+  
+<footer>
+  <p>Book covers and summaries from <%= link_to 'Amazon', 'http://www.amazon.co.uk' %> | Star graphic from <%= link_to 'Web Weaver', 'http://www.webweaver.nu/clipart/stars.shtml' %></p>
+</footer>

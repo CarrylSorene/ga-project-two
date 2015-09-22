@@ -1,19 +1,32 @@
-<div class="main">
+<div class="book-index">
 
-<% @books.each do |book| %>
+  <% @books.each do |book| %>
 
-  <section>
+    <section>
 
-    <h3><%= link_to book.title, book %></h3>
-    <h4><%= book.author %></h4>
-    
-    <p class="cover"><%= image_tag(book.cover.url) %></p>
-    
-    <h4>Summary: </h4>
-    
-    <p><%= truncate(book.summary, length: 100) { link_to 'Read more', book } %></p>
-    
-  </section>
+      <div class="book-index-info">
+        <h2 class="book-index-h2"><%= link_to book.title, book %></h2>
+        <h3><%= book.author %></h3>
+        <p><%= link_to image_tag(book.cover.url, width: '230', height: '340', alt: 'Book Cover Image' ), book %></p>
+      </div>
 
-<% end %>
+      <div class="index-summary">
+        <p><%= truncate(book.summary, length: 100) { link_to 'Read more', book } %></p>
+      </div>
+
+      <div class="avg-rating">
+        <span><% book.average_rating.times do %>
+              <%= image_tag asset_path('ystar-1a015bdb43831189bf6fe8c5c4dedd473286bc8fe2425ece567e4ca60f58f989.png') %>  
+              <% end %>
+        avg. rating</span>
+      </div>
+      
+    </section>
+
+  <% end %>
+
 </div>
+
+<footer>
+  <p>Book covers and summaries from <%= link_to 'Amazon', 'http://www.amazon.co.uk' %> | Star graphic from <%= link_to 'Web Weaver', 'http://www.webweaver.nu/clipart/stars.shtml' %></p>
+</footer>
