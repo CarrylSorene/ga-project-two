@@ -12,7 +12,8 @@
   <h4>Reviews: </h4>
     <% @book.reviews.each do |review| %>
       <p>Reviewer: <%= review.reviewer %><p>
-      <p>Rating: <%= review.rating %></p>
+      <p>Rating: <%= render_stars(review.rating) %> <%= review.rating %></p>
+      
       <p><%= review.content %></p>
   <% end %>
 
@@ -43,12 +44,3 @@
 
     </div>
   </div>
-</div>
-
-<div id="star-rating">
-  <% if @book.no_of_stars.blank? %>
-    <%= link_to 'Please add a Review',{ controller: 'reviews', action: 'new', id: book.id } %>
-  <% else %>
-    Star rating: <%= render_stars(product.no_of_stars) %>
-  <% end %>
-</div> 

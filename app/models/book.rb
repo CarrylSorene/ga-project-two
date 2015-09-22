@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
   mount_uploader :cover, CoverUploader
 
   def no_of_stars
-    self.reviews.average('no_of_stars')
+    self.reviews.average('rating')
   end
 
 end
