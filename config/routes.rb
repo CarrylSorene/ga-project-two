@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :books
-  resources :users
+resources :users
+resources :books do
   resources :reviews
+  
+  end
 
   root 'books#index'
   

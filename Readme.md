@@ -4,6 +4,8 @@
 
 A Rails app to browse and review books.
 
+![](https://github.com/CarrylSorene/ga-project-two/blob/master/bookapp.tiff)
+
 ### Approach / How it works
 
 Users can browse the main page of the site to discover a new book and see the beginning of a plot summary and the average rating.
