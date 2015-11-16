@@ -4,7 +4,6 @@
 
 A Rails app to browse and review books.
 
-![](https://github.com/CarrylSorene/ga-project-two/tree/master/app/assets/images/bookapp.png)
 
 ### Approach / How it works
 
