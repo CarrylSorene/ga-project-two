@@ -1,6 +1,6 @@
 # Do You Read Me
 
-## GA WDI London - Project 2
+## GA WDI London: Project 2
 
 A Rails app to browse and review books.
 
@@ -14,18 +14,20 @@ If they click on the book's title or cover image, they're taken to a page all ab
 
 At the top of the each page is a linked call-to-action to Add a Book which leads to page with a form for them to add a new book to the app.
 
-### The build
+###The build
 
-HTML5, CSS3, Ruby and Rails were used to create this app.
+* HTML
+* CSS
+* PureCSS
+* Ruby on Rails
+* ActiveRecord
+* PostgreSQL
+* Carrierwave
 
-Book cover images were uploaded using the Ruby gem Carrierwave.
-
-The Google Web Font 'Poirot One' was used to style the text.
-
-The PureCSS framework was used to style the forms and buttons.
-
-The database, storing all book and review data, runs on Postgresql.
-
-### Problems & Challenges
+###Problems & Challenges
 
 The biggest challenge I faced was combining two models, the book and review, into one form so each review was attached to the correct book.
+
+### Future Plans
+
+Deploy to Heroku so the working app can be used.
